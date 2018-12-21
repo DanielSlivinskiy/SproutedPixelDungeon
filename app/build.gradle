@@ -4,8 +4,9 @@ android {
     buildToolsVersion "28.0.3"
 
     defaultConfig {
-        applicationId "com.github.dachhack.sprout"
+        applicationId "com.github.dachhack.regrow"
         minSdkVersion 8
+
     }
 
     buildTypes {
