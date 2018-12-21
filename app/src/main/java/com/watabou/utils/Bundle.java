@@ -90,7 +90,7 @@ public class Bundle {
 		return data.optString( key );
 	}
 	
-	public Bundle getBundle(String key ) {
+	public Bundle getBundle( String key ) {
 		return new Bundle( data.optJSONObject( key ) );
 	}
 	
@@ -100,7 +100,7 @@ public class Bundle {
 			if (aliases.containsKey( clName )) {
 				clName = aliases.get( clName );
 			}
-
+			
 			Class<?> cl = Class.forName( clName );
 			if (cl != null) {
 				Bundlable object = (Bundlable)cl.newInstance();
@@ -112,13 +112,13 @@ public class Bundle {
 		} catch (Exception e) {
 			e = null;
 			return null;
-		}
+		}	
 	}
-
-	public Bundlable get(String key ) {
-		return getBundle( key ).get();
+	
+	public Bundlable get( String key ) {
+		return getBundle( key ).get();	
 	}
-
+	
 	public <E extends Enum<E>> E getEnum( String key, Class<E> enumClass ) {
 		try {
 			return Enum.valueOf( enumClass, data.getString( key ) );
@@ -126,7 +126,7 @@ public class Bundle {
 			return enumClass.getEnumConstants()[0];
 		}
 	}
-
+	
 	public int[] getIntArray( String key ) {
 		try {
 			JSONArray array = data.getJSONArray( key );
@@ -140,7 +140,7 @@ public class Bundle {
 			return null;
 		}
 	}
-
+	
 	public boolean[] getBooleanArray( String key ) {
 		try {
 			JSONArray array = data.getJSONArray( key );
@@ -154,7 +154,7 @@ public class Bundle {
 			return null;
 		}
 	}
-
+	
 	public String[] getStringArray( String key ) {
 		try {
 			JSONArray array = data.getJSONArray( key );
@@ -168,23 +168,23 @@ public class Bundle {
 			return null;
 		}
 	}
-
-	public Collection<Bundlable> getCollection(String key ) {
-
+	
+	public Collection<Bundlable> getCollection( String key ) {
+		
 		ArrayList<Bundlable> list = new ArrayList<Bundlable>();
-
+		
 		try {
 			JSONArray array = data.getJSONArray( key );
 			for (int i=0; i < array.length(); i++) {
 				list.add( new Bundle( array.getJSONObject( i ) ).get() );
 			}
 		} catch (JSONException e) {
-
+			
 		}
-
+		
 		return list;
 	}
-
+	
 	public void put( String key, boolean value ) {
 		try {
 			data.put( key, value );
@@ -193,6 +193,7 @@ public class Bundle {
 		}
 	}
 
+	
 	public void put( String key, int value ) {
 		try {
 			data.put( key, value );
@@ -200,7 +201,7 @@ public class Bundle {
 
 		}
 	}
-
+	
 	public void put( String key, float value ) {
 		try {
 			data.put( key, value );
@@ -208,7 +209,7 @@ public class Bundle {
 
 		}
 	}
-
+	
 	public void put( String key, String value ) {
 		try {
 			data.put( key, value );
@@ -216,7 +217,7 @@ public class Bundle {
 
 		}
 	}
-
+	
 	public void put( String key, Bundle bundle ) {
 		try {
 			data.put( key, bundle.data );
@@ -224,7 +225,7 @@ public class Bundle {
 
 		}
 	}
-
+	
 	public void put( String key, Bundlable object ) {
 		if (object != null) {
 			try {
@@ -236,7 +237,7 @@ public class Bundle {
 			}
 		}
 	}
-
+	
 	public void put( String key, Enum<?> value ) {
 		if (value != null) {
 			try {
@@ -245,7 +246,7 @@ public class Bundle {
 			}
 		}
 	}
-
+	
 	public void put( String key, int[] array ) {
 		try {
 			JSONArray jsonArray = new JSONArray();
@@ -254,10 +255,10 @@ public class Bundle {
 			}
 			data.put( key, jsonArray );
 		} catch (JSONException e) {
-
+			
 		}
 	}
-
+	
 	public void put( String key, boolean[] array ) {
 		try {
 			JSONArray jsonArray = new JSONArray();
@@ -266,10 +267,10 @@ public class Bundle {
 			}
 			data.put( key, jsonArray );
 		} catch (JSONException e) {
-
+			
 		}
 	}
-
+	
 	public void put( String key, String[] array ) {
 		try {
 			JSONArray jsonArray = new JSONArray();
@@ -278,10 +279,10 @@ public class Bundle {
 			}
 			data.put( key, jsonArray );
 		} catch (JSONException e) {
-
+			
 		}
 	}
-
+	
 	public void put( String key, Collection<? extends Bundlable> collection ) {
 		JSONArray array = new JSONArray();
 		for (Bundlable object : collection) {
@@ -297,7 +298,7 @@ public class Bundle {
 		}
 	}
 	
-	public static Bundle read(InputStream stream ) {
+	public static Bundle read( InputStream stream ) {
 		
 		try {
 			BufferedReader reader = new BufferedReader( new InputStreamReader( stream ) );
@@ -318,7 +319,7 @@ public class Bundle {
 		}
 	}
 	
-	public static Bundle read(byte[] bytes ) {
+	public static Bundle read( byte[] bytes ) {
 		try {
 			
 			JSONObject json = (JSONObject)new JSONTokener( new String( bytes ) ).nextValue();
@@ -329,7 +330,7 @@ public class Bundle {
 		}
 	}
 	
-	public static boolean write(Bundle bundle, OutputStream stream ) {
+	public static boolean write( Bundle bundle, OutputStream stream ) {
 		try {
 			BufferedWriter writer = new BufferedWriter( new OutputStreamWriter( stream ) );	
 			writer.write( bundle.data.toString() );

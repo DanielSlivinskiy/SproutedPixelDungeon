@@ -52,7 +52,7 @@ public class Shader {
 		GLES20.glDeleteShader( handle );
 	}
 	
-	public static Shader createCompiled(int type, String src ) {
+	public static Shader createCompiled( int type, String src ) {
 		Shader shader = new Shader( type );
 		shader.source( src );
 		shader.compile();

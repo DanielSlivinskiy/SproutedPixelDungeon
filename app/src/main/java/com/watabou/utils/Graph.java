@@ -92,10 +92,10 @@ public class Graph {
 	public interface Node {
 		
 		int distance();
-		void distance(int value);
-
+		void distance( int value );
+		
 		int price();
-		void price(int value);
+		void price( int value );
 		
 		Collection<? extends Node> edges();
 		

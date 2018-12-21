@@ -17,12 +17,12 @@
 
 package com.watabou.noosa;
 
-import android.graphics.RectF;
-
 import java.nio.FloatBuffer;
 
-import com.watabou.gltextures.SmartTexture;
+import android.graphics.RectF;
+
 import com.watabou.gltextures.TextureCache;
+import com.watabou.gltextures.SmartTexture;
 import com.watabou.glwrap.Quad;
 
 public class Image extends Visual {

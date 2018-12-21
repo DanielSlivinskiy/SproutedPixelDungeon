@@ -51,7 +51,7 @@ public class Rect {
 		return (right - left) * (bottom - top);
 	}
 	
-	public Rect set(int left, int top, int right, int bottom ) {
+	public Rect set( int left, int top, int right, int bottom ) {
 		this.left	= left;
 		this.top	= top;
 		this.right	= right;
@@ -59,7 +59,7 @@ public class Rect {
 		return this;
 	}
 	
-	public Rect set(Rect rect ) {
+	public Rect set( Rect rect ) {
 		return set( rect.left, rect.top, rect.right, rect.bottom );
 	}
 	
@@ -72,7 +72,7 @@ public class Rect {
 		return this;
 	}
 	
-	public Rect intersect(Rect other ) {
+	public Rect intersect( Rect other ) {
 		Rect result = new Rect();
 		result.left		= Math.max( left, other.left );
 		result.right	= Math.min( right, other.right );
@@ -81,7 +81,7 @@ public class Rect {
 		return result;
 	}
 	
-	public Rect union(int x, int y ) {
+	public Rect union( int x, int y ) {
 		if (isEmpty()) {
 			return set( x, y, x + 1, y + 1 );
 		} else {
@@ -99,7 +99,7 @@ public class Rect {
 		}
 	}
 	
-	public Rect union(Point p ) {
+	public Rect union( Point p ) {
 		return union( p.x, p.y );
 	}
 	
@@ -107,7 +107,7 @@ public class Rect {
 		return p.x >= left && p.x < right && p.y >= top && p.y < bottom;
 	}
 	
-	public Rect shrink(int d ) {
+	public Rect shrink( int d ) {
 		return new Rect( left + d, top + d, right - d, bottom - d );
 	}
 	

@@ -18,7 +18,6 @@
 package com.watabou.noosa.ui;
 
 import com.watabou.input.Touchscreen.Touch;
-
 import com.watabou.noosa.Game;
 import com.watabou.noosa.TouchArea;
 
@@ -42,19 +41,21 @@ public class Button extends Component {
 				pressTime = 0;
 				processed = false;
 				Button.this.onTouchDown();
-			};
-			@Override
+			}
+
+            @Override
 			protected void onTouchUp(Touch touch) {
 				pressed = false;
 				Button.this.onTouchUp();
-			};
-			@Override
+			}
+
+            @Override
 			protected void onClick( Touch touch ) {
 				if (!processed) {
 					Button.this.onClick();
 				}
-			};
-		};
+			}
+        };
 		add( hotArea );
 	}
 	
@@ -79,15 +80,17 @@ public class Button extends Component {
 		}
 	}
 	
-	protected void onTouchDown() {};
-	protected void onTouchUp() {};
-	protected void onClick() {};
-	
-	protected boolean onLongClick() {
+	protected void onTouchDown() {}
+
+    protected void onTouchUp() {}
+
+    protected void onClick() {}
+
+    protected boolean onLongClick() {
 		return false;
-	};
-	
-	@Override
+	}
+
+    @Override
 	protected void layout() {
 		hotArea.x = x;
 		hotArea.y = y;

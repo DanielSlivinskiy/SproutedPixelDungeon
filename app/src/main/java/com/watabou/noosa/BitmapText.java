@@ -17,15 +17,15 @@
 
 package com.watabou.noosa;
 
-import android.graphics.Bitmap;
-import android.graphics.RectF;
-
 import java.nio.FloatBuffer;
 
 import com.watabou.gltextures.SmartTexture;
 import com.watabou.gltextures.TextureCache;
 import com.watabou.glwrap.Matrix;
 import com.watabou.glwrap.Quad;
+
+import android.graphics.Bitmap;
+import android.graphics.RectF;
 
 public class BitmapText extends Visual {
 
@@ -229,11 +229,11 @@ public class BitmapText extends Visual {
 			texture = tx;
 		}
 		
-		public Font(SmartTexture tx, int width, String chars ) {
+		public Font( SmartTexture tx, int width, String chars ) {
 			this( tx, width, tx.height, chars );
 		}
 		
-		public Font(SmartTexture tx, int width, int height, String chars ) {
+		public Font( SmartTexture tx, int width, int height, String chars ) {
 			super( tx );
 			
 			texture = tx;

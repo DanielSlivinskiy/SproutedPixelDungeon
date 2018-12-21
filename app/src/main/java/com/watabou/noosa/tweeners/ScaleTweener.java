@@ -27,7 +27,7 @@ public class ScaleTweener extends Tweener {
 	public PointF start;
 	public PointF end;
 	
-	public ScaleTweener(Visual visual, PointF scale, float time ) {
+	public ScaleTweener( Visual visual, PointF scale, float time ) {
 		super( visual, time );
 		
 		this.visual = visual;

@@ -27,7 +27,7 @@ public class CameraScrollTweener extends Tweener {
 	public PointF start;
 	public PointF end;
 	
-	public CameraScrollTweener(Camera camera, PointF pos, float time ) {
+	public CameraScrollTweener( Camera camera, PointF pos, float time ) {
 		super( camera, time );
 		
 		this.camera = camera;

@@ -17,9 +17,9 @@
 
 package com.watabou.noosa;
 
-import android.graphics.RectF;
-
 import com.watabou.glwrap.Texture;
+
+import android.graphics.RectF;
 
 public class SkinnedBlock extends Image {
 	

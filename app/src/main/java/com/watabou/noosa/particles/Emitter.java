@@ -17,9 +17,9 @@
 
 package com.watabou.noosa.particles;
 
-import android.opengl.GLES20;
-
 import javax.microedition.khronos.opengles.GL10;
+
+import android.opengl.GLES20;
 
 import com.watabou.noosa.Game;
 import com.watabou.noosa.Group;
@@ -142,7 +142,7 @@ public class Emitter extends Group {
 	
 	abstract public static class Factory {
 		
-		abstract public void emit(Emitter emitter, int index, float x, float y );
+		abstract public void emit( Emitter emitter, int index, float x, float y );
 		
 		public boolean lightMode() {
 			return false;

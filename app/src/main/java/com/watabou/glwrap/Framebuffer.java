@@ -25,7 +25,7 @@ public class Framebuffer {
 	public static final int DEPTH	= GLES20.GL_DEPTH_ATTACHMENT;
 	public static final int STENCIL	= GLES20.GL_STENCIL_ATTACHMENT;
 	
-	public static final Framebuffer system	= new Framebuffer( 0 );
+	public static final Framebuffer	system	= new Framebuffer( 0 );
 	
 	private int id;
 	

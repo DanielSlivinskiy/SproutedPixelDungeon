@@ -17,16 +17,16 @@
 
 package com.watabou.noosa.audio;
 
-import android.content.res.AssetFileDescriptor;
-import android.content.res.AssetManager;
-import android.media.AudioManager;
-import android.media.SoundPool;
-
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.LinkedList;
 
 import com.watabou.noosa.Game;
+
+import android.content.res.AssetFileDescriptor;
+import android.content.res.AssetManager;
+import android.media.AudioManager;
+import android.media.SoundPool;
 
 public enum Sample implements SoundPool.OnLoadCompleteListener {
 	

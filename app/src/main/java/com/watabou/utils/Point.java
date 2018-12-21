@@ -35,13 +35,13 @@ public class Point {
 		this.y = p.y;
 	}
 	
-	public Point set(int x, int y ) {
+	public Point set( int x, int y ) {
 		this.x = x;
 		this.y = y;
 		return this;
 	}
 	
-	public Point set(Point p ) {
+	public Point set( Point p ) {
 		x = p.x;
 		y = p.y;
 		return this;
@@ -51,19 +51,19 @@ public class Point {
 		return new Point( this );
 	}
 	
-	public Point scale(float f ) {
+	public Point scale( float f ) {
 		this.x *= f;
 		this.y *= f;
 		return this;
 	}
 	
-	public Point offset(int dx, int dy ) {
+	public Point offset( int dx, int dy ) {
 		x += dx;
 		y += dy;
 		return this;
 	}
 	
-	public Point offset(Point d ) {
+	public Point offset( Point d ) {
 		x += d.x;
 		y += d.y;
 		return this;

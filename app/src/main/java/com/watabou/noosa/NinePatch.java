@@ -17,14 +17,13 @@
 
 package com.watabou.noosa;
 
-import android.graphics.RectF;
+import java.nio.FloatBuffer;
 
 import com.watabou.gltextures.SmartTexture;
 import com.watabou.gltextures.TextureCache;
-
-import java.nio.FloatBuffer;
-
 import com.watabou.glwrap.Quad;
+
+import android.graphics.RectF;
 
 public class NinePatch extends Visual {
 	
@@ -87,33 +86,33 @@ public class NinePatch extends Visual {
 		float right = width - marginRight;
 		float bottom = height - marginBottom;
 		
-		Quad.fill( vertices,
+		Quad.fill( vertices, 
 			0, marginLeft, 0, marginTop, outterF.left, innerF.left, outterF.top, innerF.top );
 		verticesBuffer.put( vertices );
-		Quad.fill( vertices,
+		Quad.fill( vertices, 
 			marginLeft, right, 0, marginTop, innerF.left, innerF.right, outterF.top, innerF.top );
 		verticesBuffer.put( vertices );
-		Quad.fill( vertices,
+		Quad.fill( vertices, 
 			right, width, 0, marginTop, innerF.right, outterF.right, outterF.top, innerF.top );
 		verticesBuffer.put( vertices );
 		
-		Quad.fill( vertices,
+		Quad.fill( vertices, 
 			0, marginLeft, marginTop, bottom, outterF.left, innerF.left, innerF.top, innerF.bottom );
 		verticesBuffer.put( vertices );
-		Quad.fill( vertices,
+		Quad.fill( vertices, 
 			marginLeft, right, marginTop, bottom, innerF.left, innerF.right, innerF.top, innerF.bottom );
 		verticesBuffer.put( vertices );
-		Quad.fill( vertices,
+		Quad.fill( vertices, 
 			right, width, marginTop, bottom, innerF.right, outterF.right, innerF.top, innerF.bottom );
 		verticesBuffer.put( vertices );
 		
-		Quad.fill( vertices,
+		Quad.fill( vertices, 
 			0, marginLeft, bottom, height, outterF.left, innerF.left, innerF.bottom, outterF.bottom );
 		verticesBuffer.put( vertices );
-		Quad.fill( vertices,
+		Quad.fill( vertices, 
 			marginLeft, right, bottom, height, innerF.left, innerF.right, innerF.bottom, outterF.bottom );
 		verticesBuffer.put( vertices );
-		Quad.fill( vertices,
+		Quad.fill( vertices, 
 			right, width, bottom, height, innerF.right, outterF.right, innerF.bottom, outterF.bottom );
 		verticesBuffer.put( vertices );
 	}

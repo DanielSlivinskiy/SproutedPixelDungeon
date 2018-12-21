@@ -17,13 +17,13 @@
 
 package com.watabou.glwrap;
 
-import android.graphics.Bitmap;
-import android.opengl.GLES20;
-import android.opengl.GLUtils;
-
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 import java.nio.IntBuffer;
+
+import android.graphics.Bitmap;
+import android.opengl.GLES20;
+import android.opengl.GLUtils;
 
 public class Texture {
 
@@ -151,21 +151,21 @@ public class Texture {
 		premultiplied = false;
 	}
 	
-	public static Texture create(Bitmap bmp ) {
+	public static Texture create( Bitmap bmp ) {
 		Texture tex = new Texture();
 		tex.bitmap( bmp );
 		
 		return tex;
 	}
 	
-	public static Texture create(int width, int height, int[] pixels ) {
+	public static Texture create( int width, int height, int[] pixels ) {
 		Texture tex = new Texture();
 		tex.pixels( width, height, pixels );
 		
 		return tex;
 	}
 	
-	public static Texture create(int width, int height, byte[] pixels ) {
+	public static Texture create( int width, int height, byte[] pixels ) {
 		Texture tex = new Texture();
 		tex.pixels( width, height, pixels );
 		

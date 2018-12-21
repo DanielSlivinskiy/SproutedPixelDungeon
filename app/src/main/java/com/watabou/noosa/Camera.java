@@ -60,30 +60,30 @@ public class Camera extends Gizmo {
 		return reset( createFullscreen( 1 ) );
 	}
 	
-	public static Camera reset(Camera newCamera ) {
+	public static Camera reset( Camera newCamera ) {
 		
 		invW2 = 2f / Game.width;
 		invH2 = 2f / Game.height;
-
+		
 		int length = all.size();
 		for (int i=0; i < length; i++) {
 			all.get( i ).destroy();
 		}
 		all.clear();
-
+		
 		return main = add( newCamera );
 	}
-
-	public static Camera add(Camera camera ) {
+	
+	public static Camera add( Camera camera ) {
 		all.add( camera );
 		return camera;
 	}
-
-	public static Camera remove(Camera camera ) {
+	
+	public static Camera remove( Camera camera ) {
 		all.remove( camera );
 		return camera;
 	}
-
+	
 	public static void updateAll() {
 		int length = all.size();
 		for (int i=0; i < length; i++) {
@@ -93,13 +93,13 @@ public class Camera extends Gizmo {
 			}
 		}
 	}
-
-	public static Camera createFullscreen(float zoom ) {
+	
+	public static Camera createFullscreen( float zoom ) {
 		int w = (int)Math.ceil( Game.width / zoom );
 		int h = (int)Math.ceil( Game.height / zoom );
-		return new Camera(
-			(int)(Game.width - w * zoom) / 2,
-			(int)(Game.height - h * zoom) / 2,
+		return new Camera( 
+			(int)(Game.width - w * zoom) / 2, 
+			(int)(Game.height - h * zoom) / 2, 
 			w, h, zoom );
 	}
 	
@@ -188,13 +188,13 @@ public class Camera extends Gizmo {
 		focusOn( visual.center() );
 	}
 	
-	public PointF screenToCamera(int x, int y ) {
-		return new PointF(
+	public PointF screenToCamera( int x, int y ) {
+		return new PointF( 
 			(x - this.x) / zoom + scroll.x, 
 			(y - this.y) / zoom + scroll.y );
 	}
 	
-	public Point cameraToScreen(float x, float y ) {
+	public Point cameraToScreen( float x, float y ) {
 		return new Point(
 			(int)((x - scroll.x) * zoom + this.x),
 			(int)((y - scroll.y) * zoom + this.y));

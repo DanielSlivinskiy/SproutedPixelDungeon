@@ -31,11 +31,6 @@ import android.view.MotionEvent;
 import android.view.SurfaceHolder;
 import android.view.View;
 
-import java.util.ArrayList;
-
-import javax.microedition.khronos.egl.EGLConfig;
-import javax.microedition.khronos.opengles.GL10;
-
 import com.watabou.glscripts.Script;
 import com.watabou.gltextures.TextureCache;
 import com.watabou.input.Keys;
@@ -45,10 +40,17 @@ import com.watabou.noosa.audio.Sample;
 import com.watabou.utils.BitmapCache;
 import com.watabou.utils.SystemTime;
 
+import java.util.ArrayList;
+
+import javax.microedition.khronos.egl.EGLConfig;
+import javax.microedition.khronos.opengles.GL10;
+
 public class Game extends Activity implements GLSurfaceView.Renderer, View.OnTouchListener {
 
 	public static Game instance;
-	
+
+	public static int versionCode;
+
 	// Actual size of the screen
 	public static int width;
 	public static int height;
@@ -162,7 +164,7 @@ public class Game extends Activity implements GLSurfaceView.Renderer, View.OnTou
 	@Override
 	public boolean onKeyDown( int keyCode, KeyEvent event ) {
 		
-		if (keyCode == Keys.VOLUME_DOWN ||
+		if (keyCode == Keys.VOLUME_DOWN || 
 			keyCode == Keys.VOLUME_UP) {
 			
 			return false;
@@ -177,7 +179,7 @@ public class Game extends Activity implements GLSurfaceView.Renderer, View.OnTou
 	@Override
 	public boolean onKeyUp( int keyCode, KeyEvent event ) {
 		
-		if (keyCode == Keys.VOLUME_DOWN ||
+		if (keyCode == Keys.VOLUME_DOWN || 
 			keyCode == Keys.VOLUME_UP) {
 			
 			return false;

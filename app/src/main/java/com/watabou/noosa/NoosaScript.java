@@ -17,10 +17,10 @@
 
 package com.watabou.noosa;
 
-import android.opengl.GLES20;
-
 import java.nio.FloatBuffer;
 import java.nio.ShortBuffer;
+
+import android.opengl.GLES20;
 
 import com.watabou.glscripts.Script;
 import com.watabou.glwrap.Attribute;
@@ -102,7 +102,7 @@ public class NoosaScript extends Script {
 
 		GLES20.glDrawElements( 
 			GLES20.GL_TRIANGLES, 
-			Quad.SIZE * size,
+			Quad.SIZE * size, 
 			GLES20.GL_UNSIGNED_SHORT, 
 			Quad.getIndices( size ) );
 		
@@ -127,7 +127,7 @@ public class NoosaScript extends Script {
 			
 			GLES20.glScissor( 
 				camera.x, 
-				Game.height - camera.screenHeight - camera.y,
+				Game.height - camera.screenHeight - camera.y, 
 				camera.screenWidth, 
 				camera.screenHeight );
 		}

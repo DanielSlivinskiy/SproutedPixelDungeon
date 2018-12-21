@@ -116,20 +116,20 @@ public class MovieClip extends Image {
 			return this;
 		}
 		
-		public Animation frames(TextureFilm film, Object... frames ) {
+		public Animation frames( TextureFilm film, Object... frames ) {
 			this.frames = new RectF[frames.length];
 			for (int i=0; i < frames.length; i++) {
 				this.frames[i] = film.get( frames[i] );
 			}
 			return this;
 		}
-
+		
 		public Animation clone() {
 			return new Animation( Math.round( 1 / delay ), looped ).frames( frames );
 		}
 	}
-
+	
 	public interface Listener {
-		void onComplete(Animation anim);
+		void onComplete( Animation anim );
 	}
 }

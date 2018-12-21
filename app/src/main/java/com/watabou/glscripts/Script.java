@@ -24,14 +24,14 @@ import com.watabou.glwrap.Shader;
 
 public class Script extends Program {
 
-	private static final HashMap<Class<? extends Script>, Script> all =
+	private static final HashMap<Class<? extends Script>,Script> all = 
 		new HashMap<Class<? extends Script>, Script>();
 	
 	private static Script curScript = null;
 	private static Class<? extends Script> curScriptClass = null;
 	
 	@SuppressWarnings("unchecked")
-	public static<T extends Script> T use(Class<T> c ) {
+	public static<T extends Script> T use( Class<T> c ) {
 		
 		if (c != curScriptClass) {
 			

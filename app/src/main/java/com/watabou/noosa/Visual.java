@@ -93,13 +93,13 @@ public class Visual extends Gizmo {
 		return new PointF( x, y );
 	}
 	
-	public PointF point(PointF p ) {
+	public PointF point( PointF p ) {
 		x = p.x;
 		y = p.y;
 		return p;
 	}
 	
-	public Point point(Point p ) {
+	public Point point( Point p ) {
 		x = p.x;
 		y = p.y;
 		return p;
@@ -109,7 +109,7 @@ public class Visual extends Gizmo {
 		return new PointF( x + width / 2, y + height / 2 );
 	}
 	
-	public PointF center(PointF p ) {
+	public PointF center( PointF p ) {
 		x = p.x - width / 2;
 		y = p.y - height / 2;
 		return p;
