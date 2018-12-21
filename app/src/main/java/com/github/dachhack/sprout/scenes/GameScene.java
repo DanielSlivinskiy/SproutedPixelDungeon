@@ -125,6 +125,8 @@ public class GameScene extends PixelScene {
 	private LootIndicator loot;
 	private ResumeIndicator resume;
 
+	public static boolean freezeEmitters = false;
+
 	@Override
 	public void create() {
 
